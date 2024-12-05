@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="cart.css">
+</head>
+<body>
+<div class="top">
+    <div class="navbar">
+        <div class="logo">
+            <a href="homepage.html" class="logo-link">
+                <img src="logo for DD .png" alt="Company Logo" height="100px" width="125px">
+            </a>
+        </div>
+        <div class="links-container">
+            <a href="homepage.html" class="navbar-link">Home</a>
+            <a href="shop.html" class="navbar-link">Shop</a>
+            <a href="Popularitems.html" class="navbar-link">Popular Items</a>
+            <a href="cart.html" class="navbar-link">Cart</a>
+  
+        </div>
+    </div>
+    <h1>Your Cart</h1>
+</div>
+
+<div id="cart-items"></div>
+
+<button id="clear-cart" style="margin: 20px; padding: 20px 20px; font-size: 16px;">Clear Cart</button>
+<div id="checkout-section">
+    <div class="checkout-summary">
+        <p>Total Items: <span id="total-items">0</span></p>
+        <p>Total Price: $<span id="total-price">0.00</span></p>
+    </div>
+    <a href="checkout.html" id="checkout-button">Proceed to Checkout</a>
+
+</div>
+
+
+<footer>
+    <div class="footer-container">
+        <p>&copy; 2024 Golf World. All Rights Reserved.</p>
+        <nav>
+            <a href="#">Privacy Policy</a> | 
+            <a href="#">Terms of Service</a> | 
+            <a href="#">Contact</a>
+        </nav>
+    </div>
+</footer>
+
+<script>
+    const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+    const cartContainer = document.querySelector('#cart-items');
+    
+    function displayCartItems() {
+        cartContainer.innerHTML = '';
+        cartItems.forEach(item => {
+            const itemElement = document.createElement('div');
+            itemElement.className = 'cart-item';
+            itemElement.innerHTML = `
+                <img src="${item.image}" alt="${item.name}">
+                <h3>${item.name}</h3>
+                <p>Price: $${item.price}</p>
+            `;
+            cartContainer.appendChild(itemElement);
+        });
+
+        if (cartItems.length === 0) {
+            cartContainer.innerHTML = '<p>Your cart is empty.</p>';
+        }
+    }
+
+    function clearCart() {
+        localStorage.removeItem('cart'); 
+        cartItems.length = 0; 
+        displayCartItems(); 
+        showToast('Your cart has been cleared!');
+    }
+
+    function showToast(message) {
+        const toast = document.createElement('div');
+        toast.className = 'toast';
+        toast.innerText = message;
+        document.body.appendChild(toast);
+        setTimeout(() => toast.remove(), 3000);
+    }
+
+
+    const clearCartButton = document.querySelector('#clear-cart');
+    clearCartButton.addEventListener('click', clearCart);
+
+    const links = document.querySelectorAll('.navbar-link');
+    links.forEach(link => {
+        if (link.href === window.location.href) {
+            link.classList.add('active');
+        }
+    });
+
+
+    displayCartItems();
+
+    function updateCheckoutSummary() {
+    const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+    const totalItems = cartItems.length;
+    const totalPrice = cartItems.reduce((sum, item) => sum + item.price, 0);
+
+    document.getElementById('total-items').innerText = totalItems;
+    document.getElementById('total-price').innerText = totalPrice.toFixed(2);
+}
+updateCheckoutSummary();
+
+</script>
+</body>
+</html>
+
+

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Popular Items</title>
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="items.css">
+</head>   
+<body>
+    <div class="top">
+        <div class="navbar">
+            <div class="logo">
+                <a href="homepage.html" class="logo-link">
+                    <img src="logo for DD .png" alt="Company Logo" height="100px" width="125px">
+                </a>
+            </div>
+            <div class="links-container">
+                <a href="homepage.html" class="navbar-link">Home</a>
+                <a href="shop.html" class="navbar-link">Shop</a>
+                <a href="Popularitems.html" class="navbar-link">Popular Items</a>
+                <a href="cart.html" class="navbar-link">Cart</a>
+      
+            </div>
+        </div>
+        <h1>Popular Items</h1>
+    </div>
+
+    <section class="video-section">
+        <video class="promo-video" controls>
+            <source src="Prove It For Yourself - Titleist Golf Balls 2020 Anthem.mp4" type="video/mp4">
+        </video>
+    </section>
+
+    <main>
+        <section class="product-container">
+            <div class="scroll-container">
+                <div class="product-card">
+                    <img src="Prov1.avif">
+                    <h3 class="item-name">Titliest Pro V1</h3>
+                    <p class="item-price">$55</p>
+                    <strong><p>TOP SELLER</p></strong>
+                    <button class="add-to-cart" onclick="addToCart({
+                        name: 'Titleist Pro V1',
+                        price: 55,
+                        image: 'Prov1.avif'
+                    })">Add to Cart</button>
+                </div>
+
+                <div class="product-card">
+                    <img src="Scotty cameron putter blade.avif" alt="Scotty Cameron Putter Blade">
+                    <h3 class="item-name">Scotty Cameron Putter Blade Style</h3>
+                    <p class="item-price">$450</p>
+                    <button class="add-to-cart" onclick="addToCart({
+                        name: 'Scotty Cameron Putter Blade Style',
+                        price: 450,
+                        image: 'Scotty cameron putter blade.avif'
+                    })">Add to Cart</button>
+                </div>
+                
+                <div class="product-card">
+                    <img src="Qi10 driver.jpg" alt="Taylormade Qi10">
+                    <h3 class="item-name">Taylormade Qi10</h3>
+                    <p class="item-price">$500</p>
+                    <button class="add-to-cart" onclick="addToCart({
+                        name: 'Taylormade Qi10',
+                        price: 500,
+                        image: 'Qi10 driver.jpg'
+                    })">Add to Cart</button>
+                </div>
+                
+                <div class="product-card">
+                    <img src="Qi10 hat .jpg" alt="Taylormade Qi10 Hat">
+                    <h3 class="item-name">Taylormade Qi10 Hat</h3>
+                    <p class="item-price">$30</p>
+                    <button class="add-to-cart" onclick="addToCart({
+                        name: 'Taylormade Qi10 Hat',
+                        price: 30,
+                        image: 'Qi10 hat .jpg'
+                    })">Add to Cart</button>
+                </div>
+                
+                <div class="product-card">
+                    <img src="spider tour x putter.webp" alt="Taylormade Spider Putter">
+                    <h3 class="item-name">Taylormade Spider Putter</h3>
+                    <p class="item-price">$350</p>
+                    <button class="add-to-cart" onclick="addToCart({
+                        name: 'Taylormade Spider Putter',
+                        price: 350,
+                        image: 'spider tour x putter.webp'
+                    })">Add to Cart</button>
+                </div>
+                
+                <div class="product-card">
+                    <img src="opus wedge.jpg" alt="Callaway Opus Wedge">
+                    <h3 class="item-name">Callaway Opus Wedge</h3>
+                    <p class="item-price">$180</p>
+                    <button class="add-to-cart" onclick="addToCart({
+                        name: 'Callaway Opus Wedge',
+                        price: 180,
+                        image: 'opus wedge.jpg'
+                    })">Add to Cart</button>
+                </div>
+                
+                <div class="product-card">
+                    <img src="Callaway junior golf set.jpg" alt="Callaway Junior Golf Set">
+                    <h3 class="item-name">Callaway Junior Golf Set</h3>
+                    <p class="item-price">$400</p>
+                    <button class="add-to-cart" onclick="addToCart({
+                        name: 'Callaway Junior Golf Set',
+                        price: 400,
+                        image: 'Callaway junior golf set.jpg'
+                    })">Add to Cart</button>
+                </div>
+                
+                <div class="product-card">
+                    <img src="Titleist tour bag.avif" alt="Titleist Tour Bag">
+                    <h3 class="item-name">Titleist Tour Bag</h3>
+                    <p class="item-price">$450</p>
+                    <button class="add-to-cart" onclick="addToCart({
+                        name: 'Titleist Tour Bag',
+                        price: 450,
+                        image: 'Titleist tour bag.avif'
+                    })">Add to Cart</button>
+                </div>
+                
+                <div class="product-card">
+                    <img src="Titliest golg bag.avif" alt="Titleist Golf Stand Bag">
+                    <h3 class="item-name">Titleist Golf Stand Bag</h3>
+                    <p class="item-price">$265</p>
+                    <button class="add-to-cart" onclick="addToCart({
+                        name: 'Titleist Golf Stand Bag',
+                        price: 265,
+                        image: 'Titliest golg bag.avif'
+                    })">Add to Cart</button>
+                </div>
+                
+                <div class="product-card">
+                    <img src="p70 irons.png" alt="Taylormade P790 Irons">
+                    <h3 class="item-name">Taylormade P790 Irons</h3>
+                    <p class="item-price">$1,500</p>
+                    <button class="add-to-cart" onclick="addToCart({
+                        name: 'Taylormade P790 Irons',
+                        price: 1500,
+                        image: 'p70 irons.png'
+                    })">Add to Cart</button>
+                </div>
+                
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2024 Golf World. All Rights Reserved.</p>
+            <nav>
+                <a href="#">Privacy Policy</a> | 
+                <a href="#">Terms of Service</a> | 
+                <a href="#">Contact</a>
+            </nav>
+        </div>
+    </footer>
+    <script>
+        function showToast(message) {
+          const toast = document.createElement('div');
+          toast.className = 'toast';
+          toast.innerText = message;
+          document.body.appendChild(toast);
+          setTimeout(() => toast.remove(), 3000);
+      }
+      
+      function addToCart(item) {
+          let cart = JSON.parse(localStorage.getItem('cart')) || [];
+          cart.push(item);
+          localStorage.setItem('cart', JSON.stringify(cart));
+          showToast(`${item.name} has been added to your cart!`);
+      }
+      
+      const links = document.querySelectorAll('.navbar-link');
+      links.forEach(link => {
+          if (link.href === window.location.href) {
+              link.classList.add('active');
+          }
+      });
+      
+      </script>
+</body>
+</html>
